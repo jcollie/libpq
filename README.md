@@ -19,7 +19,7 @@ zig fetch --save git+https://github.com/allyourcodebase/libpq#5.16.4
 
 Then, in your `build.zig`:
 ```zig
-const postgres = b.dependency("libpq", { .target = target, .optimize = optimize });
+const postgres = b.dependency("libpq", .{ .target = target, .optimize = optimize });
 const libpq = postgres.artifact("pq");
 const libpgcommon = postgres.artifact("pgcommon");
 const libpgport = postgres.artifact("pgport");
